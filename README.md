@@ -6,12 +6,12 @@ spec](https://github.com/singer-io/getting-started/blob/master/SPEC.md).
 
 This tap:
 
-- Pulls raw data from [FIXME](http://example.com)
+- Pulls raw data from [Gem API](https://api.gem.com/v0/reference)
 - Extracts the following resources:
-  - [FIXME](http://example.com)
+  - Candidates
+  - Events
+  - Projects
+  - Users
+  - Project Candidates
 - Outputs the schema for each resource
 - Incrementally pulls data based on the input state
-
----
-
-Copyright &copy; 2018 Stitch
