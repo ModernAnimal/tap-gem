@@ -1,18 +1,17 @@
 {
     "properties": {
 		"id": {"type": "string", "key": true},
-		"created": {"type": "string"},
+		"created_at": {"type": "string"},
 		"created_by": {"type": "string"},
 		"company": {"type": "string"},
 		"first_name": {"type": "string"},
 		"last_name": {"type": "string"},
-		"linkedin_handle": {"type": "string"},
+		"linked_in_handle": {"type": "string"},
 		"location": {"type": "string"},
 		"school": {"type": "string"},
 		"sourced_from": {"type": "string"},
 		"title": {"type": "string"},
 		"weblink": {"type": "string"},
-		"phone_number": {"type": "string"},
-		"last_refresh": {"type": "string"}
+		"phone_number": {"type": "string"}
 	}
 }
