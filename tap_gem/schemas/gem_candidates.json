@@ -1,7 +1,7 @@
 {
     "properties": {
 		"id": {"type": "string", "key": true},
-		"created_at": {"type": "string"},
+		"created_at": {"type": "integer"},
 		"created_by": {"type": "string"},
 		"company": {"type": "string"},
 		"first_name": {"type": "string"},
@@ -10,8 +10,8 @@
 		"location": {"type": "string"},
 		"school": {"type": "string"},
 		"sourced_from": {"type": "string"},
+		"phone_number": {"type": "string"},
 		"title": {"type": "string"},
-		"weblink": {"type": "string"},
-		"phone_number": {"type": "string"}
+		"weblink": {"type": "string"}
 	}
 }
