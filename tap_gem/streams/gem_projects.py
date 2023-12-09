@@ -1,8 +1,4 @@
-import datetime
-import json
 import logging
-from concurrent.futures import ThreadPoolExecutor
-from datetime import timezone
 
 import singer  # type: ignore
 
