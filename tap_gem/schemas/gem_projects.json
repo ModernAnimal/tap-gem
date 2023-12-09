@@ -1,12 +1,11 @@
 {
     "properties": {
 		"id": {"type": "string", "key": true},
-		"created": {"type": "string"},
+		"created": {"type": "integer"},
 		"user_id": {"type": "string"},
 		"name": {"type": "string"},
 		"privacy_type": {"type": "string"},
 		"description": {"type": "string"},
-		"is_archived": {"type": "string"},
-		"last_refresh": {"type": "string"}
+		"is_archived": {"type": "string"}
 	}
 }
