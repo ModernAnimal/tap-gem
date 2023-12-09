@@ -24,8 +24,7 @@ def stream(api_key):
                     {
                         "id": user["id"],
                         "name": user.get("name", None),
-                        "email": user.get("email", None),
-                        "last_refresh": user.get("last_refresh", None),
+                        "email": user.get("email", None)
                     },
                 )
             page_num += 1
