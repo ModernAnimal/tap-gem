@@ -12,6 +12,7 @@ def stream(api_key):
     has_next = True
 
     for project_id in PROJECT_IDS:
+        logging.info(project_id)  # TODO: Remove - for testing
         while has_next:
             projects, has_next = gem_api(
                 f"projects/{project_id}/candidates", api_key, page_num
@@ -27,6 +28,6 @@ def stream(api_key):
                     },
                 )
             page_num += 1
-            logging.info("Gem page completed %s", page_num)
+            logging.info("Gem project: %s page completed %s", project_id, page_num)
 
     logging.info("Completed gem_project_candidates.py")
