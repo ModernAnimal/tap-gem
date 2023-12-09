@@ -6,7 +6,7 @@ from tap_gem.streams.api import gem_api
 
 
 def stream(api_key):
-    logging.info("Started gem_users_pipeline.py")
+    logging.info("Started gem_users.py")
 
     page_num = 1
     has_next = True
