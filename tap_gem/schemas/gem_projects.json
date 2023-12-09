@@ -1,7 +1,7 @@
 {
     "properties": {
 		"id": {"type": "string", "key": true},
-		"created": {"type": "integer"},
+		"created_at": {"type": "integer"},
 		"user_id": {"type": "string"},
 		"name": {"type": "string"},
 		"privacy_type": {"type": "string"},
