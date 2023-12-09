@@ -8,11 +8,12 @@ from tap_gem.streams.api import PROJECT_IDS, gem_api
 def stream(api_key):
     logging.info("Started gem_project_candidates.py")
 
-    page_num = 1
-    has_next = True
-
     for project_id in PROJECT_IDS:
         logging.info(project_id)  # TODO: Remove - for testing
+
+        page_num = 1
+        has_next = True
+
         while has_next:
             projects, has_next = gem_api(
                 f"projects/{project_id}/candidates", api_key, page_num
