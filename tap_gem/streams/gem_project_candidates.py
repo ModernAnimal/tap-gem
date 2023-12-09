@@ -27,8 +27,7 @@ def stream(api_key):
                         "id": project_id + '|' + project["candidate_id"],
                         "project_id": project_id,
                         "candidate_id": project["candidate_id"],
-                        "added_at": project.get("added_at", None),
-                        "last_refresh": project.get("last_refresh", None),
+                        "added_at": project.get("added_at", None)
                     },
                 )
             page_num += 1
