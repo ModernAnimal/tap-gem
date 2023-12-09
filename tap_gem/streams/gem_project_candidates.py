@@ -9,8 +9,6 @@ def stream(api_key):
     logging.info("Started gem_project_candidates.py")
 
     for project_id in PROJECT_IDS:
-        logging.info(project_id)  # TODO: Remove - for testing
-
         page_num = 1
         has_next = True
 

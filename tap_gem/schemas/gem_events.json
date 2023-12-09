@@ -1,7 +1,7 @@
 {
     "properties": {
 		"id": {"type": "string", "key": true},
-		"timestamp": {"type": "string"},
+		"timestamp": {"type": "integer"},
 		"candidate_id": {"type": "string"},
 		"contact_medium": {"type": "string"},
 		"user_id": {"type": "string"},
