@@ -22,7 +22,7 @@ def get_events(api_key, candidate_id):
     for attempt in range(3):
         try:
             # events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?created_after>={cutoff}&page_size=100"
-            events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?created_before={cutoff}&page_size=100"
+            events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?created_after={cutoff}&page_size=100"
             response = requests.get(events_url, headers=headers, timeout=120)
             if response.status_code != 200:
                 response_events = []
