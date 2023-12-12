@@ -7,7 +7,7 @@ import singer  # type: ignore
 from tap_gem.streams.api import CANDIDATE_IDS
 
 # setting cutoff for records created after certain date - looking back two days to capture any records missed in the event the job fails one day
-# cutoff = datetime.datetime.now() - datetime.timedelta(days=1)
+cutoff = datetime.datetime.now() - datetime.timedelta(days=300)
 
 
 def get_events(api_key, candidate_id):
@@ -20,7 +20,7 @@ def get_events(api_key, candidate_id):
     for attempt in range(3):
         try:
             # events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?created_after>={cutoff}&page_size=100"
-            events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?page_size=100"
+            events_url = f"https://api.gem.com/v0/candidates/{candidate_id}/events?created_before<={cutoff}&page_size=100"
             response = requests.get(events_url, headers=headers, timeout=120)
             if response.status_code != 200:
                 response_events = []
