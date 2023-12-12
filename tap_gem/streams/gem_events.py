@@ -62,7 +62,7 @@ def stream(api_key):
     logging.info("Started gem_events_pipeline.py")
 
     # TODO: REMOVE RANGE LITERAL AFTER TESTING!!!
-    for candidate_id in CANDIDATE_IDS[0:100]:
+    for candidate_id in CANDIDATE_IDS[15000:15100]:
         # Call API for events - uses candidate ids from candidates (above) as input for API call
         events_api_response = get_events(api_key, candidate_id)
 
