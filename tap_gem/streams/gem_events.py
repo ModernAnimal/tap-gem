@@ -10,8 +10,7 @@ from tap_gem.streams.api import CANDIDATE_IDS
 # setting cutoff for records created after certain date - looking back two days to capture any records missed in the event the job fails one day
 # TODO: change lookback period to 2 days
 cutoff = datetime.datetime.now() - datetime.timedelta(days=300)
-cutoff = int(time.mktime(cutoff.timetuple()))
-print(cutoff)
+cutoff = str(int(time.mktime(cutoff.timetuple())))
 
 def get_events(api_key, candidate_id):
     # set API key
