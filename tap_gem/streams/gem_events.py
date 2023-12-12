@@ -61,13 +61,14 @@ def parse_events(response_events):
 def stream(api_key):
     logging.info("Started gem_events_pipeline.py")
 
-    for candidate_id in CANDIDATE_IDS:
+    # TODO: REMOVE RANGE LITERAL AFTER TESTING!!!
+    for candidate_id in CANDIDATE_IDS[0:100]:
         # Call API for events - uses candidate ids from candidates (above) as input for API call
         events_api_response = get_events(api_key, candidate_id)
 
         # Parse API payload into tuples
         parse_events(events_api_response)
 
-        logging.info("Gem candidates - candidate %s completed", candidate_id)
+        logging.info("Gem Events - candidate %s completed", candidate_id)
 
     logging.info("Completed gem_events_pipeline.py")
