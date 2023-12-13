@@ -60,7 +60,7 @@ def parse_events(response_events):
     return parsed_records
 
 
-def process_batch(api_key, candidate_id):
+def process_batch(candidate_id, api_key):
     # Call API for events - uses candidate ids from candidates (above) as input for API call
     events_api_response = get_events(api_key, candidate_id)
 
