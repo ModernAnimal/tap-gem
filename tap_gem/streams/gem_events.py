@@ -13,6 +13,7 @@ from tap_gem.streams.api import CANDIDATE_IDS
 cutoff = datetime.datetime.now() - datetime.timedelta(days=300)
 cutoff = int(time.mktime(cutoff.timetuple()))
 
+
 def get_events(api_key, candidate_id):
     # set API key
     headers = {
@@ -74,7 +75,7 @@ def stream(api_key):
     logging.info("Started gem_events_pipeline.py")
 
     with ThreadPoolExecutor(max_workers=10) as executor:
-        for _ in executor.map(process_batch, CANDIDATE_IDS[10000:11000], repeat(api_key)):
+        for _ in executor.map(process_batch, CANDIDATE_IDS, repeat(api_key)):
             pass
 
     logging.info("Completed gem_events_pipeline.py")
