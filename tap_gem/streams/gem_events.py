@@ -3,14 +3,15 @@ import datetime
 from itertools import repeat
 import logging
 import requests
-import singer  # type: ignore
 import time
+
+import singer  # type: ignore
 
 from tap_gem.streams.api import CANDIDATE_IDS
 
-# setting cutoff for records created after certain date - looking back two days to capture any records missed in the event the job fails one day
-# TODO: change lookback period to 2 days
-cutoff = datetime.datetime.now() - datetime.timedelta(days=270)
+# setting cutoff for records created after certain date - looking back one
+# week to capture any records missed in the event of errors in previous runs.
+cutoff = datetime.datetime.now() - datetime.timedelta(days=7)
 cutoff = int(time.mktime(cutoff.timetuple()))
 
 
@@ -62,7 +63,7 @@ def parse_events(response_events):
 
 
 def process_batch(candidate_id, api_key):
-    # Call API for events - uses candidate ids from candidates (above) as input for API call
+    # Use candidate_id from candidates job as input for API call
     events_api_response = get_events(api_key, candidate_id)
 
     # Parse API payload into tuples
@@ -79,17 +80,3 @@ def stream(api_key):
             pass
 
     logging.info("Completed gem_events_pipeline.py")
-
-
-# Save old function to revert if needed
-# def stream(api_key):
-#     logging.info("Started gem_events_pipeline.py")
-
-#     for candidate_id in CANDIDATE_IDS:
-#         # Call API for events - uses candidate ids from candidates (above) as input for API call
-#         events_api_response = get_events(api_key, candidate_id)
-
-#         # Parse API payload into tuples
-#         parse_events(events_api_response)
-
-#         logging.info("Gem Events - candidate %s completed", candidate_id)
