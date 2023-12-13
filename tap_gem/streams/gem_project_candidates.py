@@ -1,8 +1,4 @@
-import datetime
-import json
 import logging
-from concurrent.futures import ThreadPoolExecutor
-from datetime import timezone
 
 import singer  # type: ignore
 
@@ -12,10 +8,10 @@ from tap_gem.streams.api import PROJECT_IDS, gem_api
 def stream(api_key):
     logging.info("Started gem_project_candidates.py")
 
-    page_num = 1
-    has_next = True
-
     for project_id in PROJECT_IDS:
+        page_num = 1
+        has_next = True
+
         while has_next:
             projects, has_next = gem_api(
                 f"projects/{project_id}/candidates", api_key, page_num
@@ -27,11 +23,10 @@ def stream(api_key):
                         "id": project_id + '|' + project["candidate_id"],
                         "project_id": project_id,
                         "candidate_id": project["candidate_id"],
-                        "added_at": project.get("added_at", None),
-                        "last_refresh": project.get("last_refresh", None),
+                        "added_at": project.get("added_at", None)
                     },
                 )
             page_num += 1
-            logging.info("Gem page completed %s", page_num)
+            logging.info("Gem project: %s page completed %s", project_id, page_num)
 
     logging.info("Completed gem_project_candidates.py")

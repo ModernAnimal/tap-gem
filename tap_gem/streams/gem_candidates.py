@@ -33,6 +33,8 @@ def stream(api_key):
                     "school": candidate.get("school", None),
                     "sourced_from": candidate.get("sourced_from", None),
                     "phone_number": candidate.get("phone_number", None),
+                    "title": candidate.get("title", None),
+                    "weblink": candidate.get("weblink", None),
                 },
             )
 

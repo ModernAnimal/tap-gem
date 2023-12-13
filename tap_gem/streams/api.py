@@ -18,6 +18,6 @@ def gem_api(resource_path, api_key, page_num):
     )
     page_response = requests.get(paginated_url, headers=headers)
     response_pagination = json.loads(page_response.headers["X-Pagination"])
-    has_next = page_num < response_pagination["last_page"]
+    has_next = page_num < response_pagination["total_pages"]
 
     return page_response.json(), has_next

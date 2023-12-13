@@ -1,8 +1,4 @@
-import datetime
-import json
 import logging
-from concurrent.futures import ThreadPoolExecutor
-from datetime import timezone
 
 import singer  # type: ignore
 
@@ -10,7 +6,7 @@ from tap_gem.streams.api import PROJECT_IDS, gem_api
 
 
 def stream(api_key):
-    logging.info("Started gem_candidates_pipeline.py")
+    logging.info("Started gem_projects.py")
 
     page_num = 1
     has_next = True
@@ -29,8 +25,7 @@ def stream(api_key):
                         "name": project.get("name", None),
                         "privacy_type": project.get("privacy_type", None),
                         "description": project.get("description", None),
-                        "is_archived": project.get("is_archived", None),
-                        "last_refresh": project.get("last_refresh", None),
+                        "is_archived": project.get("is_archived", None)
                     },
                 )
             page_num += 1
