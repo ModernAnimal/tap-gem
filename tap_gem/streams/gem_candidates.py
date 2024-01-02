@@ -35,6 +35,7 @@ def stream(api_key):
                     "phone_number": candidate.get("phone_number", None),
                     "title": candidate.get("title", None),
                     "weblink": candidate.get("weblink", None),
+                    "emails": candidate.get("emails", None),
                 },
             )
 

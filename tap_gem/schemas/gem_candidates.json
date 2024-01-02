@@ -12,6 +12,7 @@
 		"sourced_from": {"type": "string"},
 		"phone_number": {"type": "string"},
 		"title": {"type": "string"},
-		"weblink": {"type": "string"}
+		"weblink": {"type": "string"},
+		"emails": {"type": "string"}
 	}
 }
