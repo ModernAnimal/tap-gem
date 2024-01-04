@@ -13,6 +13,7 @@
 		"phone_number": {"type": "string"},
 		"title": {"type": "string"},
 		"weblink": {"type": "string"},
-		"emails": {"type": "string"}
+		"emails": {"type": "string"},
+		"custom_fields": {"type": "string"}
 	}
 }
