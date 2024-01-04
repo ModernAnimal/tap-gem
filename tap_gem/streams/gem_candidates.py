@@ -36,6 +36,7 @@ def stream(api_key):
                     "title": candidate.get("title", None),
                     "weblink": candidate.get("weblink", None),
                     "emails": candidate.get("emails", None),
+                    "custom_fields": candidate.get("custom_fields", None)
                 },
             )
 
